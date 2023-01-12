@@ -8,9 +8,9 @@ import { TodoSearch } from "./TodoSearch";
 //import './App.css';
 
 const toDos = [
-  {text: 'Ir al baño', completed: false},
+  {text: 'Ir al baño', completed: true},
   {text: 'Leer Narnia', completed: false},
-  {text: 'Tarea usco', completed: false}
+  {text: 'Tarea usco', completed: true}
 ]
 
 function App() {
@@ -20,7 +20,11 @@ function App() {
       <TodoSearch />
       <TodoList>
         {toDos.map((toDo, index) =>  
-          <TodoItem key={index} text={toDo.text}/>
+          <TodoItem 
+            key={index} 
+            text={toDo.text}
+            completed={toDo.completed}  
+          />
         )} 
       </TodoList>
       <CreateTodoButton />
