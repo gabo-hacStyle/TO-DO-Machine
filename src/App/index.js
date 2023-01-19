@@ -10,7 +10,8 @@ import {TodosLoading} from "../TodosLoading/index.js"
 import { TodoHeader } from "../TodoHeader";
 import { TodoCounter } from "../TodoCounter";
 import { TodoSearch } from "../TodoSearch";
-import { useTodos } from "./useTodos"
+import { useTodos } from "./useTodos";
+import { EmptyResults } from "../EmptyResults";
 
 
 function App() {
@@ -29,31 +30,57 @@ function App() {
   } = useTodos();
   return (
     <React.Fragment>
-      <TodoHeader>
+      <TodoHeader loading={loading}>
         <TodoCounter
           totalTodos={totalTodos}
           completedTodos={completedTodos}
         />
 
         <TodoSearch 
+          loading={loading}
           searchValue={searchValue}
           setSearchValue={setSearchValue}
         />
+        
       </TodoHeader>
-         
-      <TodoList>
-        {error && <TodosError error={error} />}
-        {loading && <TodosLoading />}
-        {(!loading && !searchedTodos.length) && <EmptyTodos />}
-        {searchedTodos.map((todo, index) =>  
+
+      <TodoList
+        totalTodos={totalTodos}
+        error={error}
+        loading={loading}
+        searchedTodos={searchedTodos}
+        onError={() => <TodosError />}
+        searchedText={searchValue}
+        onLoading={() => <TodosLoading />}
+        onEmptyTodos={() => <EmptyTodos />}
+        //For no Searched results
+        onEmptyResults={
+          (searchedText) => (
+          <EmptyResults
+            searchedText={searchedText}
+          />)}
+        /*Next commented lines are a render prop, 
+        to use them, comment the render function 
+        (children) and uncomment the prop
+        */
+       // render={(todo, index) => (
+         // <TodoItem 
+        //    key={index} 
+        //    text={todo.text}
+        //    completed={todo.completed}
+        //    onComplete={() => completeTodo(todo.text)}
+        //    onDelete={() => deleteTodo(todo.text)}
+         // />
+          //)}
+        >  
+          {(todo, index) => (
           <TodoItem 
             key={index} 
             text={todo.text}
             completed={todo.completed}
             onComplete={() => completeTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
-          />
-        )} 
+          />)}
       </TodoList>
 
       {openModal && (
