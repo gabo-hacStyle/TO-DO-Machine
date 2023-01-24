@@ -12,7 +12,7 @@ import { TodoCounter } from "../TodoCounter";
 import { TodoSearch } from "../TodoSearch";
 import { useTodos } from "./useTodos";
 import { EmptyResults } from "../EmptyResults";
-
+import { ChangeAlert } from "../ChangeAlert";
 
 function App() {
   const {error, 
@@ -27,6 +27,7 @@ function App() {
     searchValue, 
     setSearchValue,
     addTodo,
+    sincronizeTodos
   } = useTodos();
   return (
     <React.Fragment>
@@ -44,6 +45,10 @@ function App() {
         
       </TodoHeader>
 
+      <ChangeAlert
+        sincronize={sincronizeTodos}
+      />
+
       <TodoList
         totalTodos={totalTodos}
         error={error}
@@ -59,28 +64,25 @@ function App() {
           <EmptyResults
             searchedText={searchedText}
           />)}
-        /*Next commented lines are a render prop, 
-        to use them, comment the render function 
-        (children) and uncomment the prop
-        */
-       // render={(todo, index) => (
-         // <TodoItem 
-        //    key={index} 
-        //    text={todo.text}
-        //    completed={todo.completed}
-        //    onComplete={() => completeTodo(todo.text)}
-        //    onDelete={() => deleteTodo(todo.text)}
-         // />
-          //)}
-        >  
-          {(todo, index) => (
+        
+         render={(todo, index) => (
           <TodoItem 
             key={index} 
             text={todo.text}
             completed={todo.completed}
             onComplete={() => completeTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
-          />)}
+          />
+          )}
+        >  
+          {/*(todo, index) => (
+          <TodoItem 
+            key={index} 
+            text={todo.text}
+            completed={todo.completed}
+            onComplete={() => completeTodo(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
+          />)*/}
       </TodoList>
 
       {openModal && (
@@ -96,7 +98,7 @@ function App() {
         setOpenModal={setOpenModal}
         openModal={openModal}
       />
-     
+      
     </React.Fragment>
   );
 }
