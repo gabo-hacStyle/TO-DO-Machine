@@ -3,7 +3,7 @@
 ## The app
 This is a simple but efficient to-do app where you're able to manage your own to-do list for your daily actions. You can create them, mark them as finished when you are done and also delete those you don't need anymore!! If you got a lot of tasks, you would like to help yourself out with the searcher!!    
 
-##Getting Started with Create React App
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
