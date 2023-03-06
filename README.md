@@ -1,4 +1,4 @@
-# This is my first React app
+# TodoMachine React app
 
 ##Getting Started with Create React App
 
