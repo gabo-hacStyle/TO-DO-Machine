@@ -1,20 +1,61 @@
-# TodoMachine React app
+# Todo Machine
 
-## The app
-This is a simple but efficient to-do app where you're able to manage your own to-do list for your daily actions. You can create them, mark them as finished when you are done and also delete those you don't need anymore!! If you got a lot of tasks, you would like to help yourself out with the searcher!!    
+## Project Overview
 
-## Getting Started with Create React App
+Todo Machine is a single-page application (SPA) built with JavaScript and React. It serves as a simple to-do list manager that utilizes local storage for data persistence. Users can create new to-dos, mark them as completed, and delete unnecessary tasks.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Live Demo
 
-## Available Scripts
+[Explore Todo Machine](https://gabo-hacstyle.github.io/to-do-machine/)
 
-In the project directory, you can run:
+## Technologies Used
 
-### `npm start`
+- **JavaScript**: The primary scripting language.
+- **React**: JavaScript library for building user interfaces.
+- **CSS**: Used for styling.
+- **HTML**: Markup language for structuring content.
+- **npm packages**: Utilized for additional functionalities.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Description
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Todo Machine was created to offer an efficient solution for managing daily tasks. Inspired by the teachings and guidance from [Platzi](https://www.platzi.com/), this project reflects the skills acquired through their platform.
+
+## Key Features
+
+- **Create Todos**: Users can effortlessly add new tasks to their to-do list.
+- **Check Todos**: Completed tasks can be marked off to keep track of progress.
+- **Delete Todos**: Easily remove unwanted tasks from the list.
+- **Local Storage**: Utilizes local storage as a database, ensuring that to-dos persist even when the user closes the browser.
+
+## Deployment
+
+The project is live on GitHub Pages. You can access it [here](https://gabo-hacstyle.github.io/to-do-machine/).
+
+## Installation
+
+To run the project locally, follow these steps:
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/your-repo.git
+
+# Navigate to the project directory
+cd your-repo
+
+# Install dependencies
+npm install
+
+# Run the project locally
+npm start
+```
+## Credits
+Platzi: Acknowledgment for their valuable teachings.
+
+## License
+This project is licensed under the MIT License.
+
+## Get in Touch
+Feel free to connect if you have questions or suggestions:
+
+Email: [gabo2023brazil@gmail.com](mailto:gabo2023brazil@gmail.com)
+LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/gabriel-fajardo-ortiz-174b55268/)
